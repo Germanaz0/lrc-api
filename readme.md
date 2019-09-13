@@ -8,7 +8,7 @@ Requirements: Docker.
 - Then in another terminal you need to execute `docker-compose exec php bash` you will be prompetd to a terminal.
 - In the php terminal, you need to execute `composer install`.
 - Then execute `php artisan migrate`
-- Then execute `php artisan db:seed`
+- Then execute `php artisan db:seed --class=DummieDataSeeder`
 
 Configure Laravel Passport:
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserLoginRequest;
 use App\Http\Requests\UserRegisterRequest;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 use Carbon\Carbon;
 use Auth;
 

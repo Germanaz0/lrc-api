@@ -31,7 +31,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "cziemann@example.net",
+									"value": "admin2@admin.example.com",
 									"type": "text"
 								},
 								{
@@ -83,11 +83,16 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "admin@admin.example.com",
+									"value": "admin2@admin.example.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
 									"value": "password",
 									"type": "text"
 								},
@@ -193,6 +198,192 @@
 				}
 			],
 			"description": "Authentication methods"
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Protected",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"Awesome API Service!\",\n\t\"description\": \"We make the best  service finder\",\n\t\"address\": \"1317 Putnam Ave\",\n\t\"city\": \"Brooklyn\",\n\t\"state\": \"New York\",\n\t\"country\": \"United States\",\n\t\"zip_code\": \"11221\",\n\t\"geolocation\": {\n\t\t\"lat\": 40.6933416,\n\t\t\"lng\": -73.9162116\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{host}}/api/services",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"services"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"Awesome API Service Updated\",\n\t\"geolocation\": {\n\t\t\"lat\": 40.6931759,\n\t\t\"lng\": -73.9167607\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{host}}/api/services/5003",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"5003"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Service",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/api/services/5003",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"5003"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{access_token}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cdabe02b-8de7-4b45-b0fc-87136ef8a00e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "3f021047-08cf-413d-9e90-67ff00c8d7fb",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/services/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/services",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

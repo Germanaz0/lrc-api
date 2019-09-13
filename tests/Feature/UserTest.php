@@ -136,13 +136,15 @@ class UserTest extends TestCase
 
         $response = $this->json('GET', self::URL_ME, [], $headers);
         $response->assertStatus(200)
-        ->assertJsonStructure([
-            'id',
-            'name',
-            'email',
-            'created_at',
-            'updated_at',
-        ]);
+            ->assertJsonStructure([
+                'data' => [
+                    'id',
+                    'name',
+                    'email',
+                    'created_at',
+                    'updated_at',
+                ],
+            ]);
 
         // Test Logout
         $access_token = $response->json(['access_token']);

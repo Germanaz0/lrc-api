@@ -1,5 +1,6 @@
 <?php
 
+use \App\Http\Controllers\ServiceController;
 use Illuminate\Http\Request;
 
 /*
@@ -22,3 +23,6 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get('me', 'AuthController@me');
     });
 });
+
+
+Route::apiResource('services', 'ServiceController');

@@ -8,7 +8,7 @@ Requirements: Docker.
 - Then in another terminal you need to execute `docker-compose exec php bash` you will be prompetd to a terminal.
 - In the php terminal, you need to execute `composer install`.
 - Then execute `php artisan migrate`
-- Then execute `php artisan db:seed --class=DummieDataSeeder`
+- This step is optional if you need dummie data `php artisan db:seed --class=DummieDataSeeder`
 
 Configure Laravel Passport:
 
@@ -20,6 +20,10 @@ You should have something like this:
 > PASSPORT_CLIENT_ID=2
 >
 > PASSPORT_CLIENT_SECRET=AABBCCDD
+
+## Application
+
+ After running the docker compose up you will find the API into the host: `http://127.0.0.1:8000`
 
 ## Testing
 

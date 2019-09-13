@@ -4,6 +4,7 @@
 
 Requirements: Docker.
 
+- Copy `.env.example` to `.env` and modify if needed
 - Execute in the main root of the project `docker-compose up`
 - Then in another terminal you need to execute `docker-compose exec php bash` you will be prompetd to a terminal.
 - In the php terminal, you need to execute `composer install`.

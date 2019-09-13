@@ -44,7 +44,7 @@ class AuthController extends Controller
 
         // Validate credentials through user
         if (!Auth::guard('web')->attempt($credentials, false, false)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+            return response()->json(['message' => 'Wrong password or email'], 401);
         }
 
         // Get current user

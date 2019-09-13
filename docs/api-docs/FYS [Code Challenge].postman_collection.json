@@ -258,17 +258,17 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"title\": \"Awesome API Service Updated\",\n\t\"geolocation\": {\n\t\t\"lat\": 40.6931759,\n\t\t\"lng\": -73.9167607\n\t}\n}"
+									"raw": "{\n\t\"title\": \"Awesome API Service!\",\n\t\"description\": \"We make the best  service finder\",\n\t\"address\": \"1317 Putnam Ave\",\n\t\"city\": \"Brooklyn\",\n\t\"state\": \"New York\",\n\t\"country\": \"United States\",\n\t\"zip_code\": \"11221\",\n\t\"geolocation\": {\n\t\t\"lat\": 40.6933416,\n\t\t\"lng\": -73.9162116\n\t}\n}"
 								},
 								"url": {
-									"raw": "{{host}}/api/services/5003",
+									"raw": "{{host}}/api/services/5004",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
 										"api",
 										"services",
-										"5003"
+										"5004"
 									]
 								}
 							},
@@ -286,14 +286,14 @@
 									}
 								],
 								"url": {
-									"raw": "{{host}}/api/services/5003",
+									"raw": "{{host}}/api/services/5005",
 									"host": [
 										"{{host}}"
 									],
 									"path": [
 										"api",
 										"services",
-										"5003"
+										"5005"
 									]
 								}
 							},
@@ -371,7 +371,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/api/services?lat=40.6933416&lng=-73.9162116&distance=500",
+							"raw": "{{host}}/api/services?lat=40.6933416&lng=-73.9162116&distance=500&paginated=true",
 							"host": [
 								"{{host}}"
 							],
@@ -391,6 +391,10 @@
 								{
 									"key": "distance",
 									"value": "500"
+								},
+								{
+									"key": "paginated",
+									"value": "true"
 								}
 							]
 						}

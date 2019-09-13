@@ -34,6 +34,7 @@ class ServiceController extends Controller
         $center_input = ['lat' => $request->get('lat', 0), 'lng' => $request->get('lng', 0)];
         $sort = $request->get('sort', 'asc');
         $distance = intval($request->input('distance'));
+        $paginated = (bool) $request->input('paginated');
 
         // Service Query
         $sq = Service::query();
@@ -48,7 +49,7 @@ class ServiceController extends Controller
         // Sort by distance from client center
         $sq->orderByDistanceSphere('geolocation', $center, $sort);
 
-        $services = $sq->get();
+        $services = $paginated ? $sq->paginate() : $sq->get();
 
         // Return the resource
         return new ServiceCollection($services);

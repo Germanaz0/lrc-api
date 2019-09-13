@@ -44,6 +44,10 @@ class ServiceTest extends TestCase
         ],
     ];
 
+    /**
+     * Generates authentication headers
+     * @return array
+     */
     protected function getAuthHeaders()
     {
         $user = factory(User::class)->create();
@@ -66,6 +70,8 @@ class ServiceTest extends TestCase
      */
     public function testProtectedPages()
     {
+        // Create, Update and Delete Operations are not allowed by guests
+
         $response = $this->json('POST', self::BASE_URL, self::FORM_DATA);
         $response->assertStatus(401)->assertJsonStructure(["message"]);
 

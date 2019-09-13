@@ -122,6 +122,6 @@ class ServiceController extends Controller
             ]);
         }
 
-        return response()->json(['message' => 'There were an error while deleting the service']);
+        return response(422)->json(['message' => 'There were an error while deleting the service']);
     }
 }

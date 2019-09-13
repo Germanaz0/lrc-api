@@ -31,7 +31,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "admin2@admin.example.com",
+									"value": "tester@lrc.example.com",
 									"type": "text"
 								},
 								{

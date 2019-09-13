@@ -24,6 +24,7 @@ class ServiceController extends Controller
 
     /**
      * Get a list of services sorted by distance from the center
+     *
      * @param Request $request
      * @return ServiceCollection
      */
@@ -56,8 +57,8 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param ServiceRequest $request
+     * @return ServiceResource
      */
     public function store(ServiceRequest $request)
     {
@@ -84,6 +85,7 @@ class ServiceController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
      * @param ServiceUpdateRequest $request
      * @param Service $service
      * @return ServiceResource

@@ -31,4 +31,8 @@ You should have something like this:
  
 ## Docs
 
- - Postman collection and environment is located into `docs/api-docs` 
+ - Postman collection and environment is located into [docs/api-docs](./docs/api-docs) 
+
+## Frontend application
+
+The repository can be found [clicking here](https://github.com/Germanaz0/lrc-front)

@@ -11,7 +11,7 @@ class DummieDataSeeder extends Seeder
      */
     public function run()
     {
-//        factory(App\Models\User::class, 50)->create();
+        factory(App\Models\User::class, 50)->create();
         factory(App\Models\Service::class, 5000)->create();
     }
 }

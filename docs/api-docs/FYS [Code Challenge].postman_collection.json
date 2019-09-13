@@ -346,14 +346,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/api/services/2",
+							"raw": "{{host}}/api/services/1",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"services",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -371,13 +371,27 @@
 							}
 						],
 						"url": {
-							"raw": "{{host}}/api/services",
+							"raw": "{{host}}/api/services?lat=40.6933416&lng=-73.9162116&distance=500",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"services"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "40.6933416"
+								},
+								{
+									"key": "lng",
+									"value": "-73.9162116"
+								},
+								{
+									"key": "distance",
+									"value": "500"
+								}
 							]
 						}
 					},

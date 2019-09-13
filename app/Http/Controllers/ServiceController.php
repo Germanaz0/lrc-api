@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ServiceRequest;
 use App\Http\Requests\ServiceUpdateRequest;
+use App\Http\Resources\ServiceCollection;
 use App\Http\Resources\ServiceResource;
 use Grimzy\LaravelMysqlSpatial\Types\Point;
 use Illuminate\Http\Request;
@@ -22,13 +23,34 @@ class ServiceController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get a list of services sorted by distance from the center
+     * @param Request $request
+     * @return ServiceCollection
      */
     public function index(Request $request)
     {
-        //@TODO: Implement search and listing
+        // Request values
+        $center_input = ['lat' => $request->get('lat', 0), 'lng' => $request->get('lng', 0)];
+        $sort = $request->get('sort', 'asc');
+        $distance = intval($request->input('distance'));
+
+        // Service Query
+        $sq = Service::query();
+
+        $center = new Point($center_input['lat'], $center_input['lng']);
+
+        // Filter by kilometers
+        if ($distance > 0) {
+            $sq->kmDistance($center, $distance);
+        }
+
+        // Sort by distance from client center
+        $sq->orderByDistanceSphere('geolocation', $center, $sort);
+
+        $services = $sq->get();
+
+        // Return the resource
+        return new ServiceCollection($services);
     }
 
     /**

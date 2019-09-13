@@ -28,4 +28,14 @@ class Service extends Model
     protected $spatialFields = [
         'geolocation',
     ];
+
+    /**
+     * Short alias of the scope to filter by distance but allowing kilometers.
+     * @param $center
+     * @param $kmInput
+     * @return mixed
+     */
+    public function scopeKmDistance($query, $center, $kmInput) {
+        return $this->scopeDistanceSphere($query,'geolocation', $center, $kmInput * 1000);
+    }
 }

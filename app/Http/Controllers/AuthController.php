@@ -57,6 +57,7 @@ class AuthController extends Controller
             $token->expires_at = Carbon::now()->addWeeks(1);
         }
 
+        // Set expiration date
         $token_expires = Carbon::parse($tokenResult->token->expires_at)->toDateTimeString();
 
         // Save user

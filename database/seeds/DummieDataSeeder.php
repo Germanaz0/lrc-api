@@ -12,7 +12,7 @@ class DummieDataSeeder extends Seeder
     public function run()
     {
         // Create services
-        factory(App\Models\Service::class, 5000)->create();
+        factory(App\Models\Service::class, 500)->create();
 
         // Front user
         $data = [

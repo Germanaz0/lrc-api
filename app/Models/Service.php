@@ -27,6 +27,7 @@ class Service extends Model
 
     protected $spatialFields = [
         'geolocation',
+        'area',
     ];
 
     /**

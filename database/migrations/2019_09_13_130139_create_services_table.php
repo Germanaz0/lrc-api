@@ -21,6 +21,7 @@ class CreateServicesTable extends Migration
             $table->text('description');
             $table->string('address');
             $table->string('city');
+            $table->string('country');
             $table->string('state');
             $table->string('zip_code');
             $table->point('geolocation');

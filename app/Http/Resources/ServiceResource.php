@@ -20,6 +20,7 @@ class ServiceResource extends JsonResource
             'description' => $this->description,
             'address' => $this->address,
             'city' => $this->city,
+            'country' => $this->country,
             'state' => $this->state,
             'zip_code' => $this->zip_code,
             'geolocation' => $this->geolocation,

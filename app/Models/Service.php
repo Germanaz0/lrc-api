@@ -22,6 +22,7 @@ class Service extends Model
         'city',
         'state',
         'zip_code',
+        'country',
         'geolocation',
     ];
 

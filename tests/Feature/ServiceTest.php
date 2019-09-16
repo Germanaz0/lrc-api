@@ -34,6 +34,7 @@ class ServiceTest extends TestCase
             "title",
             "description",
             "address",
+            "country",
             "city",
             "state",
             "zip_code",

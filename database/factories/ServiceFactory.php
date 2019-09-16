@@ -11,6 +11,7 @@ $factory->define(Service::class, function (Faker $faker) {
         'description' => $faker->realText(150),
         'address' => $faker->streetAddress,
         'city' => $faker->city,
+        'country' => $faker->country,
         'state' => $faker->state,
         'zip_code' => $faker->postcode,
         'geolocation' => new Point($faker->latitude, $faker->longitude),

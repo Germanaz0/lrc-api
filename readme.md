@@ -32,7 +32,7 @@ You should have something like this:
  
 ## Docs
 
- - Postman collection and environment is located into [docs/api-docs](./docs/api-docs) 
+ - Postman collection and environment are located into [docs/api-docs](./docs/api-docs) 
 
 ## Frontend application
 
